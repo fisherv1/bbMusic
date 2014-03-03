@@ -21,6 +21,7 @@
 		780C923016B8768300088A45 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 780C922F16B8768300088A45 /* Default@2x.png */; };
 		780C923216B8768300088A45 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 780C923116B8768300088A45 /* Default-568h@2x.png */; };
 		780C923516B8768400088A45 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 780C923316B8768400088A45 /* MainStoryboard.storyboard */; };
+		780EA7B418C4381F00AA3D9A /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 780EA7B318C4381F00AA3D9A /* iAd.framework */; };
 		780F086A17FBF888008AB0FB /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 780F086917FBF888008AB0FB /* CoreText.framework */; };
 		7810CE5B1748B28B00FFA8B7 /* btn_orange@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7810CE5A1748B28B00FFA8B7 /* btn_orange@2x.png */; };
 		7810CE5D1748B29800FFA8B7 /* btn_orange.png in Resources */ = {isa = PBXBuildFile; fileRef = 7810CE5C1748B29800FFA8B7 /* btn_orange.png */; };
@@ -145,6 +146,7 @@
 		780C922F16B8768300088A45 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		780C923116B8768300088A45 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		780C923416B8768400088A45 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		780EA7B318C4381F00AA3D9A /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.0.sdk/System/Library/Frameworks/iAd.framework; sourceTree = DEVELOPER_DIR; };
 		780F086917FBF888008AB0FB /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.0.sdk/System/Library/Frameworks/CoreText.framework; sourceTree = DEVELOPER_DIR; };
 		7810CE5A1748B28B00FFA8B7 /* btn_orange@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_orange@2x.png"; sourceTree = "<group>"; };
 		7810CE5C1748B29800FFA8B7 /* btn_orange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_orange.png; sourceTree = "<group>"; };
@@ -278,6 +280,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				780EA7B418C4381F00AA3D9A /* iAd.framework in Frameworks */,
 				780F086A17FBF888008AB0FB /* CoreText.framework in Frameworks */,
 				78F095E117FBF85100D88855 /* CoreGraphics.framework in Frameworks */,
 				780982BE17CEBD9A00B62749 /* CoreData.framework in Frameworks */,
@@ -350,6 +353,7 @@
 		780C921A16B8768300088A45 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				780EA7B318C4381F00AA3D9A /* iAd.framework */,
 				780F086917FBF888008AB0FB /* CoreText.framework */,
 				78F095E017FBF85100D88855 /* CoreGraphics.framework */,
 				780982BD17CEBD9A00B62749 /* CoreData.framework */,
@@ -824,13 +828,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Juehua Lu (8HX733X48J)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BabySong/BabySong-Prefix.pch";
 				INFOPLIST_FILE = "BabySong/BabySong-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "CB79B047-FAF0-4FA9-8B8E-CD0DA7CDEE94";
 				SDKROOT = iphoneos6.0;
 				WRAPPER_EXTENSION = app;
 			};
@@ -846,6 +851,7 @@
 				INFOPLIST_FILE = "BabySong/BabySong-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "92BA55CA-9E97-4231-BA69-AE72CD24F758";
 				SDKROOT = iphoneos6.0;
 				WRAPPER_EXTENSION = app;

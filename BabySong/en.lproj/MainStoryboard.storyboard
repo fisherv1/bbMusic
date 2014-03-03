@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="12F37" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="RVL-yb-uSW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="RVL-yb-uSW">
     <dependencies>
         <deployment defaultVersion="1536" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
         <!--Upgrade View Controller - more-->
@@ -10,15 +10,15 @@
             <objects>
                 <viewController id="aYp-yL-SlI" customClass="UpgradeViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mCj-Ds-ypm">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="background2.png" id="GzL-Xh-5i0">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <view contentMode="scaleToFill" id="fFD-j7-TJb" customClass="iCarousel">
-                                <rect key="frame" x="0.0" y="15" width="320" height="241"/>
+                                <rect key="frame" x="0.0" y="21" width="320" height="241"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bY7-6w-FVI" customClass="THLabel">
                                         <rect key="frame" x="0.0" y="88" width="320" height="97"/>
@@ -67,12 +67,17 @@
                                     <action selector="upgradeToPro:" destination="aYp-yL-SlI" eventType="touchUpInside" id="h6J-du-bYS"/>
                                 </connections>
                             </button>
+                            <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="f1P-My-5a1">
+                                <rect key="frame" x="0.0" y="499" width="320" height="50"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            </adBannerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="more" image="more.png" id="f2p-RG-lZT"/>
                     <navigationItem key="navigationItem" id="9Ha-pZ-ifF"/>
                     <connections>
+                        <outlet property="aBanner" destination="f1P-My-5a1" id="GFB-7H-xTq"/>
                         <outlet property="allSongDownloadedLabel" destination="bY7-6w-FVI" id="6nr-gk-zot"/>
                         <outlet property="carousel" destination="fFD-j7-TJb" id="BnJ-el-Syh"/>
                         <outlet property="downloadAction" destination="TaX-Ky-f29" id="Oiz-Xn-23e"/>
@@ -83,14 +88,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZXa-8D-nxl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="854" y="345"/>
+            <point key="canvasLocation" x="970" y="319"/>
         </scene>
         <!--Song Name Table View Controller-->
         <scene sceneID="fEq-oS-hlp">
             <objects>
                 <tableViewController id="RwM-Bo-7HQ" customClass="SongNameTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="63" sectionHeaderHeight="22" sectionFooterHeight="22" id="dlc-HD-B41">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -135,15 +140,15 @@
             <objects>
                 <viewController id="rsV-PR-MwN" customClass="SongNameViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="I4k-Tz-kN0">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="background.png" id="Njd-gn-lSi">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <view contentMode="scaleToFill" id="W8r-Ht-YJk" customClass="iCarousel">
-                                <rect key="frame" x="0.0" y="4" width="320" height="241"/>
+                                <rect key="frame" x="0.0" y="5" width="320" height="241"/>
                                 <connections>
                                     <outlet property="dataSource" destination="rsV-PR-MwN" id="JcH-ch-ekU"/>
                                     <outlet property="delegate" destination="rsV-PR-MwN" id="aa8-VT-v8b"/>
@@ -156,11 +161,16 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Daz-ph-srb">
+                                <rect key="frame" x="0.0" y="497" width="320" height="50"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            </adBannerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="6hc-bU-G99"/>
                     <connections>
+                        <outlet property="aBanner" destination="Daz-ph-srb" id="rYY-Ko-dqT"/>
                         <outlet property="carousel" destination="W8r-Ht-YJk" id="svY-5z-Mra"/>
                         <outlet property="songNameLabel" destination="rDf-hQ-DMa" id="5Cq-Vn-NvL"/>
                         <segue destination="NHV-K0-Ura" kind="push" identifier="playSegue" id="36A-Lu-f7S"/>
@@ -169,31 +179,36 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f3l-Pl-hPX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="221" y="-431"/>
+            <point key="canvasLocation" x="311" y="-65"/>
         </scene>
         <!--Play Song View Controller-->
         <scene sceneID="BpH-el-FJ4">
             <objects>
                 <viewController storyboardIdentifier="playSongViewControl" id="NHV-K0-Ura" customClass="PlaySongViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kKT-rl-u2g">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="background1.jpg" id="yYf-b8-hsC">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
+                            <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="2VE-65-aTC">
+                                <rect key="frame" x="0.0" y="398" width="320" height="50"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            </adBannerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="FMa-bM-9cN"/>
                     <connections>
+                        <outlet property="aBanner" destination="2VE-65-aTC" id="UuX-ub-n11"/>
                         <outlet property="bgImgView" destination="yYf-b8-hsC" id="Op0-Ua-OSI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aQR-7o-i3s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1069" y="-444"/>
+            <point key="canvasLocation" x="877" y="-458"/>
         </scene>
     </scenes>
     <resources>
@@ -208,6 +223,6 @@
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
 </document>

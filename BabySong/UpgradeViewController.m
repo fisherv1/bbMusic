@@ -15,6 +15,8 @@
 #import "KKProgressToolbar.h"
 #import "AppDelegate.h"
 #import "LibraryAPI.h"
+#import <iAd/iAd.h>
+#import <iAd/ADBannerView.h>
 
 #define ITEM_SPACING 200
 
@@ -32,9 +34,10 @@
 #define kGradientEndColor	[UIColor colorWithRed:255.0 / 255.0 green:163.0 / 255.0 blue:64.0 / 255.0 alpha:1.0]
 
 
-@interface UpgradeViewController()
+@interface UpgradeViewController()<ADBannerViewDelegate>
 {
     NSArray *_products;
+    __weak IBOutlet ADBannerView *aBanner;
 }
 
 @end
@@ -326,6 +329,8 @@
     
     
     carousel.type = iCarouselTypeCoverFlow;
+    
+      aBanner.frame = CGRectMake(0, self.view.frame.size.height - aBanner.frame.size.height, aBanner.frame.size.width, aBanner.frame.size.height);
     
     if (![self isIPHONE5]) {
         CGRect rect = upgradeBtn.frame;

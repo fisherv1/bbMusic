@@ -9,8 +9,13 @@
 #import "PlaySongViewController.h"
 #import "Song.h"
 #import "LibraryAPI.h"
-@interface PlaySongViewController ()
-
+#import <iAd/iAd.h>
+#import <iAd/ADBannerView.h>
+@interface PlaySongViewController ()<ADBannerViewDelegate>
+{
+    
+    __weak IBOutlet ADBannerView *aBanner;
+}
 @end
 
 @implementation PlaySongViewController
@@ -76,6 +81,18 @@
             self.audioPlayer.delegate = self;
             if([self.audioPlayer prepareToPlay] && [self.audioPlayer play])
             {
+                
+                NSMutableDictionary *songInfo = [ [NSMutableDictionary alloc] init];
+                
+                
+               // MPMediaItemArtwork *albumArt = [ [MPMediaItemArtwork alloc] initWithImage: [UIImage imagedNamed:@"AlbumArt"] ];
+                
+                [ songInfo setObject: @"Audio Title" forKey:MPMediaItemPropertyTitle ];
+                [ songInfo setObject: @"Audio Author" forKey:MPMediaItemPropertyArtist ];
+                [ songInfo setObject: @"Audio Album" forKey:MPMediaItemPropertyAlbumTitle ];
+              //  [ songInfo setObject: albumArt forKey:MPMediaItemPropertyArtwork ];
+                [ [MPNowPlayingInfoCenter defaultCenter] setNowPlayingInfo:songInfo ];
+                
                 
             }
             else{
@@ -163,14 +180,27 @@
 	
     //[artworkView setImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"background1" ofType:@"jpg"]] forState:UIControlStateNormal];
     
-    [artworkView addTarget:self action:@selector(showOverlayView) forControlEvents:UIControlEventTouchUpInside];
+  //  [artworkView addTarget:self action:@selector(showOverlayView) forControlEvents:UIControlEventTouchUpInside];
 	artworkView.showsTouchWhenHighlighted = NO;
 	artworkView.adjustsImageWhenHighlighted = NO;
 	artworkView.backgroundColor = [UIColor clearColor];
-	[self.view addSubview:artworkView];
+    [self.view addSubview:artworkView];
+    
+    [self showOverlayView];
+    
     
     [self initPlayPanel];
     [self playSound];
+    
+    [self initiADView];
+    
+    
+}
+
+-(void)initiADView
+{
+    aBanner.frame = CGRectMake(0, playButton.frame.origin.y-aBanner.frame.size.height-10, aBanner.frame.size.width, aBanner.frame.size.height);
+    
 }
 
 -(void)configNavigationTitle

@@ -13,6 +13,11 @@
 #import "Song.h"
 #import "LibraryAPI.h"
 #import "THLabel.h"
+#import <iAd/iAd.h>
+#import <iAd/ADBannerView.h>
+
+
+
 
 #define ITEM_SPACING 200
 
@@ -28,8 +33,11 @@
 #define kGradientEndColor	[UIColor colorWithRed:255.0 / 255.0 green:163.0 / 255.0 blue:64.0 / 255.0 alpha:1.0]
 
 
-@interface SongNameViewController ()
-
+@interface SongNameViewController ()<ADBannerViewDelegate>
+{
+    
+    __weak IBOutlet ADBannerView *aBanner;
+}
 
 @end
 
@@ -62,6 +70,9 @@
     [self configNavigationTitle];
     [self configSongNameLabel];
     carousel.type = iCarouselTypeCoverFlow;
+    
+    
+    aBanner.frame = CGRectMake(0, self.view.frame.size.height - aBanner.frame.size.height, aBanner.frame.size.width, aBanner.frame.size.height);
 }
 
 
@@ -374,18 +385,21 @@
        
       //  Song *song = [songList objectAtIndex:songIndex];
        // pv.song = song;
-        
          pv.songIndex = songIndex;
        [pv setSongList:songList];
-        
     }
-    
-    
-    
 }
 
+#pragma banner view
+-(void)bannerViewActionDidFinish:(ADBannerView *)banner
+{
 
+}
 
+-(void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error
+{
+
+}
 
 - (void)didReceiveMemoryWarning
 {
