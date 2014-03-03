@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="12F37" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="RVL-yb-uSW">
+    <dependencies>
+        <deployment defaultVersion="1536" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
+    </dependencies>
+    <scenes>
+        <!--Upgrade View Controller - more-->
+        <scene sceneID="5ZA-uu-sqR">
+            <objects>
+                <viewController id="aYp-yL-SlI" customClass="UpgradeViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mCj-Ds-ypm">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="background2.png" id="GzL-Xh-5i0">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" id="fFD-j7-TJb" customClass="iCarousel">
+                                <rect key="frame" x="0.0" y="15" width="320" height="241"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bY7-6w-FVI" customClass="THLabel">
+                                        <rect key="frame" x="0.0" y="88" width="320" height="97"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <connections>
+                                    <outlet property="dataSource" destination="aYp-yL-SlI" id="fHt-BR-8CQ"/>
+                                    <outlet property="delegate" destination="aYp-yL-SlI" id="WwB-5D-Wl5"/>
+                                </connections>
+                            </view>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="PcK-k8-4z9">
+                                <rect key="frame" x="58" y="340" width="215" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Upgrade to get more songs" backgroundImage="btn_orange.png">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="upgradeToPro:" destination="aYp-yL-SlI" eventType="touchUpInside" id="oj2-lg-5RG"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="TaX-Ky-f29">
+                                <rect key="frame" x="58" y="276" width="215" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Download songs" backgroundImage="btn_orange.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="downloadAction:" destination="aYp-yL-SlI" eventType="touchUpInside" id="hOg-YD-mbJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="srG-Fd-7NC">
+                                <rect key="frame" x="232" y="70" width="82" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" backgroundImage="restore.png">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="restoreAction:" destination="aYp-yL-SlI" eventType="touchUpInside" id="DQv-4Y-5Ry"/>
+                                    <action selector="upgradeToPro:" destination="aYp-yL-SlI" eventType="touchUpInside" id="h6J-du-bYS"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="more" image="more.png" id="f2p-RG-lZT"/>
+                    <navigationItem key="navigationItem" id="9Ha-pZ-ifF"/>
+                    <connections>
+                        <outlet property="allSongDownloadedLabel" destination="bY7-6w-FVI" id="6nr-gk-zot"/>
+                        <outlet property="carousel" destination="fFD-j7-TJb" id="BnJ-el-Syh"/>
+                        <outlet property="downloadAction" destination="TaX-Ky-f29" id="Oiz-Xn-23e"/>
+                        <outlet property="downloadBtn" destination="TaX-Ky-f29" id="iEr-dd-Qt6"/>
+                        <outlet property="restoreBtn" destination="srG-Fd-7NC" id="hcp-1l-9ng"/>
+                        <outlet property="upgradeBtn" destination="PcK-k8-4z9" id="C26-eX-dPI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZXa-8D-nxl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="854" y="345"/>
+        </scene>
+        <!--Song Name Table View Controller-->
+        <scene sceneID="fEq-oS-hlp">
+            <objects>
+                <tableViewController id="RwM-Bo-7HQ" customClass="SongNameTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="63" sectionHeaderHeight="22" sectionFooterHeight="22" id="dlc-HD-B41">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="63" id="Miw-zU-gT1">
+                                <rect key="frame" x="0.0" y="22" width="320" height="63"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Miw-zU-gT1" id="s7g-3N-2NZ">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="62"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="RwM-Bo-7HQ" id="3fK-Dd-tSv"/>
+                            <outlet property="delegate" destination="RwM-Bo-7HQ" id="pAM-AJ-QNo"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="vrK-A9-xaK"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0xp-Qc-qvP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1389" y="483"/>
+        </scene>
+        <!--Navigation Controller - music-->
+        <scene sceneID="08V-DF-DCh">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="RVL-yb-uSW" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="music" image="music.png" id="BmI-wl-Niq"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Rx7-a3-xCE">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="rsV-PR-MwN" kind="relationship" relationship="rootViewController" id="kGY-Wz-Ih1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wlm-w2-DH2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-672" y="-439"/>
+        </scene>
+        <!--Song Name View Controller-->
+        <scene sceneID="xd5-Yg-v5d">
+            <objects>
+                <viewController id="rsV-PR-MwN" customClass="SongNameViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="I4k-Tz-kN0">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="background.png" id="Njd-gn-lSi">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" id="W8r-Ht-YJk" customClass="iCarousel">
+                                <rect key="frame" x="0.0" y="4" width="320" height="241"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="rsV-PR-MwN" id="JcH-ch-ekU"/>
+                                    <outlet property="delegate" destination="rsV-PR-MwN" id="aa8-VT-v8b"/>
+                                </connections>
+                            </view>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rDf-hQ-DMa" customClass="THLabel">
+                                <rect key="frame" x="9" y="189" width="303" height="94"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="6hc-bU-G99"/>
+                    <connections>
+                        <outlet property="carousel" destination="W8r-Ht-YJk" id="svY-5z-Mra"/>
+                        <outlet property="songNameLabel" destination="rDf-hQ-DMa" id="5Cq-Vn-NvL"/>
+                        <segue destination="NHV-K0-Ura" kind="push" identifier="playSegue" id="36A-Lu-f7S"/>
+                        <segue destination="aYp-yL-SlI" kind="push" identifier="upgradeSegue" id="faq-iq-Uqd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f3l-Pl-hPX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="221" y="-431"/>
+        </scene>
+        <!--Play Song View Controller-->
+        <scene sceneID="BpH-el-FJ4">
+            <objects>
+                <viewController storyboardIdentifier="playSongViewControl" id="NHV-K0-Ura" customClass="PlaySongViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kKT-rl-u2g">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="background1.jpg" id="yYf-b8-hsC">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="FMa-bM-9cN"/>
+                    <connections>
+                        <outlet property="bgImgView" destination="yYf-b8-hsC" id="Op0-Ua-OSI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aQR-7o-i3s" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1069" y="-444"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="background.png" width="640" height="960"/>
+        <image name="background1.jpg" width="640" height="960"/>
+        <image name="background2.png" width="640" height="960"/>
+        <image name="btn_orange.png" width="278" height="46"/>
+        <image name="more.png" width="29" height="26"/>
+        <image name="music.png" width="15" height="15"/>
+        <image name="restore.png" width="100" height="40"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+</document>

@@ -1,0 +1,13 @@
+/* Localized versions of Info.plist keys */
+
+/* Tab Bar*/
+"TabBarMusic" = "music";
+"TabBarMore"  = "more";
+
+/* Navigation Bar*/
+"MusicNavTitle" = "Baby Songs";
+"UpgradeNavTitle" = "Get More Songs";
+
+
+/* Song downloaded */
+"SongDownloadedMsg" = "All songs downloaded. \n Enjoy!";
